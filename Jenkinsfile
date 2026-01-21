@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+        SCANNER_HOME = tool 'sonar-token'
         NVD_API_KEY = credentials('nvd-api-key')  // Jenkins secret text credential
     }
 
@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ygminds73/Ekart.git'
+                git branch: 'master', url: 'https://github.com/Ishwari2599/Ekart.git'
             }
         }
 
