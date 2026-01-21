@@ -76,9 +76,9 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u youngminds73 -p ${dockerhubpwd}'}
-                   sh 'docker push youngminds73/ekart:latest'
+                   withCredentials([string(credentialsId: 'dockerhub-creds', variable: 'dockerhub-creds')]) {
+                   sh 'docker login -u youngminds73 -p ${dockerhub-creds}'}
+                   sh 'docker push adminyguess/ekart:latest'
                 }
             }
         }
